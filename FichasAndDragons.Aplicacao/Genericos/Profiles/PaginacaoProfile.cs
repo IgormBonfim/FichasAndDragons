@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using FichasAndDragons.Comum.Genericos.Entidades;
 using FichasAndDragons.DataTransfer.Genericos.Responses;
-using FichasAndDragons.Dominio.Genericos.Entidades;
 
 namespace FichasAndDragons.Aplicacao.Genericos.Profiles
 {

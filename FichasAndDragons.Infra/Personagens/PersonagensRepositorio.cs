@@ -1,8 +1,7 @@
-﻿using FichasAndDragons.Dominio.Genericos.Interfaces;
+﻿using FichasAndDragons.Comum.Configs.Interfaces;
+using FichasAndDragons.Comum.Genericos;
 using FichasAndDragons.Dominio.Personagens.Entidades;
 using FichasAndDragons.Dominio.Personagens.Repositorios;
-using FichasAndDragons.Infra.Configs.Interfaces;
-using FichasAndDragons.Infra.Genericos;
 using System;
 using System.Collections.Generic;
 using System.Linq;

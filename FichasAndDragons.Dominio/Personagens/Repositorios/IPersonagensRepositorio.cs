@@ -1,4 +1,4 @@
-﻿using FichasAndDragons.Dominio.Genericos.Interfaces;
+﻿using FichasAndDragons.Comum.Genericos.Interfaces;
 using FichasAndDragons.Dominio.Personagens.Entidades;
 using System;
 using System.Collections.Generic;

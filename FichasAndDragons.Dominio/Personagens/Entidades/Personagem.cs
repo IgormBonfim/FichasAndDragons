@@ -1,5 +1,5 @@
-﻿using FichasAndDragons.Dominio.Base.Entidades;
-using FichasAndDragons.Dominio.Genericos.Entidades;
+﻿using FichasAndDragons.Comum.Genericos.Entidades;
+using FichasAndDragons.Dominio.Base.Entidades;
 
 namespace FichasAndDragons.Dominio.Personagens.Entidades
 {

@@ -1,7 +1,7 @@
-﻿using MongoDB.Driver;
-using FichasAndDragons.Infra.Configs.Interfaces;
+﻿using FichasAndDragons.Comum.Configs.Interfaces;
+using MongoDB.Driver;
 
-namespace FichasAndDragons.Infra.Configs
+namespace FichasAndDragons.Comum.Configs
 {
     public class MongoDatabaseConfiguration : IMongoDatabaseConfiguration
     {

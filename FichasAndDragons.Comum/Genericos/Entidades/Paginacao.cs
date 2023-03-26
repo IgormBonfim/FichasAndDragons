@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FichasAndDragons.Dominio.Genericos.Entidades
+namespace FichasAndDragons.Comum.Genericos.Entidades
 {
     public class Paginacao<T> where T : class
     {

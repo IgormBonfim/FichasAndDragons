@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FichasAndDragons.Infra.Configs.Interfaces
+namespace FichasAndDragons.Comum.Configs.Interfaces
 {
     public interface IMongoDatabaseConfiguration
     {

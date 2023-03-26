@@ -1,40 +1,40 @@
-﻿using MongoDB.Driver;
-using FichasAndDragons.Dominio.Genericos.Entidades;
-using FichasAndDragons.Dominio.Genericos.Interfaces;
-using FichasAndDragons.Infra.Configs.Interfaces;
+﻿using FichasAndDragons.Comum.Genericos.Entidades;
+using FichasAndDragons.Comum.Genericos.Interfaces;
+using FichasAndDragons.Comum.Configs.Interfaces;
 using MongoDB.Bson;
+using MongoDB.Driver;
 
-namespace FichasAndDragons.Infra.Genericos
+namespace FichasAndDragons.Comum.Genericos
 {
     public class MongoRepositorio<T> : IMongoRepositorio<T> where T : Entidade
     {
-        private readonly IMongoCollection<T> _mongoCollection;
+        private readonly IMongoCollection<T> mongoCollection;
 
         public MongoRepositorio(IMongoDatabaseConfiguration mongoDataBaseConfiguration, string collection)
         {
-            _mongoCollection = mongoDataBaseConfiguration.MongoDatabase.GetCollection<T>(collection);
+            mongoCollection = mongoDataBaseConfiguration.MongoDatabase.GetCollection<T>(collection);
         }
 
         public T Adicionar(T entidade)
         {
-            _mongoCollection.InsertOne(entidade);
+            mongoCollection.InsertOne(entidade);
             return entidade;
         }
 
         public T Atualizar(ObjectId id, T entidade)
         {
-            _mongoCollection.ReplaceOne(entidade => entidade.Id == id, entidade);
+            mongoCollection.ReplaceOne(entidade => entidade.Id == id, entidade);
             return entidade;
         }
 
         public void Excluir(ObjectId id)
         {
-            _mongoCollection.DeleteOne(entidade => entidade.Id == id);
+            mongoCollection.DeleteOne(entidade => entidade.Id == id);
         }
 
         public IEnumerable<T> Listar()
         {
-            return _mongoCollection.Find(entidade => true).ToList();
+            return mongoCollection.Find(entidade => true).ToList();
         }
 
         public Paginacao<T> Listar(IQueryable<T> query, int pagina, int quantidade)
@@ -67,12 +67,12 @@ namespace FichasAndDragons.Infra.Genericos
 
         public T Recuperar(ObjectId id)
         {
-            return _mongoCollection.Find(entidade => entidade.Id == id).FirstOrDefault();
+            return mongoCollection.Find(entidade => entidade.Id == id).FirstOrDefault();
         }
 
         public IQueryable<T> Query()
         {
-            return _mongoCollection.AsQueryable();
+            return mongoCollection.AsQueryable();
         }
     }
 }

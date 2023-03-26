@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FichasAndDragons.Dominio.Genericos.Entidades;
+using FichasAndDragons.Comum.Genericos.Entidades;
 using MongoDB.Bson;
 
-namespace FichasAndDragons.Dominio.Genericos.Interfaces
+namespace FichasAndDragons.Comum.Genericos.Interfaces
 {
     public interface IMongoRepositorio<T> where T : Entidade
     {
