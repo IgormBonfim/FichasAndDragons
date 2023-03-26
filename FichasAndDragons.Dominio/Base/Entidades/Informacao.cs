@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FichasAndDragons.Dominio.Base.Entidades
 {
-    public class Informacoes
+    public class Informacao
     {
         public int Idade { get; protected set; }
         public decimal Altura { get; protected set; }
@@ -19,9 +19,9 @@ namespace FichasAndDragons.Dominio.Base.Entidades
         public string Antecedente { get; protected set; }
         public string Alinhamento { get; protected set; }
 
-        public Informacoes() { }
+        public Informacao() { }
 
-        public Informacoes(int idade, decimal altura, decimal peso, string corOlhos, string corPele, string corCabelo, string descricao, string historia, string antecedente, string alinhamento)
+        public Informacao(int idade, decimal altura, decimal peso, string corOlhos, string corPele, string corCabelo, string descricao, string historia, string antecedente, string alinhamento)
         {
             SetIdade(idade);
             SetAltura(altura);

@@ -11,10 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\FichasAndDragons.Comum\FichasAndDragons.Comum.csproj" />
     <ProjectReference Include="..\FichasAndDragons.DataTransfer\FichasAndDragons.DataTransfer.csproj" />
     <ProjectReference Include="..\FichasAndDragons.Ioc\FichasAndDragons.Ioc.csproj" />
   </ItemGroup>

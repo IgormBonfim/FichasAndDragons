@@ -2,6 +2,7 @@
 using FichasAndDragons.Dominio.Genericos.Entidades;
 using FichasAndDragons.Dominio.Genericos.Interfaces;
 using FichasAndDragons.Infra.Configs.Interfaces;
+using MongoDB.Bson;
 
 namespace FichasAndDragons.Infra.Genericos
 {
@@ -20,13 +21,13 @@ namespace FichasAndDragons.Infra.Genericos
             return entidade;
         }
 
-        public T Atualizar(string id, T entidade)
+        public T Atualizar(ObjectId id, T entidade)
         {
             _mongoCollection.ReplaceOne(entidade => entidade.Id == id, entidade);
             return entidade;
         }
 
-        public void Excluir(string id)
+        public void Excluir(ObjectId id)
         {
             _mongoCollection.DeleteOne(entidade => entidade.Id == id);
         }
@@ -50,10 +51,10 @@ namespace FichasAndDragons.Infra.Genericos
 
             return new Paginacao<T>
             {
-                TotalItems = total,
+                Total = total,
                 Pagina = pagina,
                 Quantidade = quantidade,
-                Lista = items,
+                Registros = items,
             };
         }
 
@@ -64,7 +65,7 @@ namespace FichasAndDragons.Infra.Genericos
             return query.Skip(pular).Take(quantidade);
         }
 
-        public T Recuperar(string id)
+        public T Recuperar(ObjectId id)
         {
             return _mongoCollection.Find(entidade => entidade.Id == id).FirstOrDefault();
         }

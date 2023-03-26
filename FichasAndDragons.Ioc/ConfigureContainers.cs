@@ -1,5 +1,9 @@
-﻿using FichasAndDragons.Infra.Configs;
+﻿using FichasAndDragons.Aplicacao.Personagens.Profiles;
+using FichasAndDragons.Aplicacao.Personagens.Servicos;
+using FichasAndDragons.Dominio.Personagens.Servicos;
+using FichasAndDragons.Infra.Configs;
 using FichasAndDragons.Infra.Configs.Interfaces;
+using FichasAndDragons.Infra.Personagens;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -19,6 +23,11 @@ namespace FichasAndDragons.Ioc
 
             services.AddScoped<IMongoDatabaseConfiguration>(x => MongoDatabaseFluent.Configure().ConfigureClient(connectionString).ConfigureDatabaseName(databaseName));
 
+            services.Scan(scan => scan.FromAssemblyOf<PersonagensAppServico>().AddClasses().AsImplementedInterfaces().WithScopedLifetime());
+            services.Scan(scan => scan.FromAssemblyOf<PersonagensServico>().AddClasses().AsImplementedInterfaces().WithScopedLifetime());
+            services.Scan(scan => scan.FromAssemblyOf<PersonagensRepositorio>().AddClasses().AsImplementedInterfaces().WithScopedLifetime());
+
+            services.AddAutoMapper(typeof(PersonagensProfile));
         }
     }
 }

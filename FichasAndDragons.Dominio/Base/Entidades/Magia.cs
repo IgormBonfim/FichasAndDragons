@@ -15,10 +15,11 @@ namespace FichasAndDragons.Dominio.Base.Entidades
         public string Alcance { get; protected set; }
         public string Componentes { get; protected set; }
         public string Duracao { get; protected set; }
+        public IEnumerable<Dano>? Danos { get; protected set; }
 
         public Magia() { }
 
-        public Magia(string nome, string descricao, int circulo, string tempoConjuracao, string alcance, string componentes, string duracao)
+        public Magia(string nome, string descricao, int circulo, string tempoConjuracao, string alcance, string componentes, string duracao, IEnumerable<Dano>? danos)
         {
             SetNome(nome);
             SetDescricao(descricao);
@@ -27,6 +28,7 @@ namespace FichasAndDragons.Dominio.Base.Entidades
             SetAlcance(alcance);
             SetComponentes(componentes);
             SetDuracao(duracao);
+            SetDanos(danos);
         }
 
         public void SetNome(string nome)
@@ -62,6 +64,11 @@ namespace FichasAndDragons.Dominio.Base.Entidades
         public void SetDuracao(string duracao)
         {
             Duracao = duracao;
+        }
+
+        public void SetDanos(IEnumerable<Dano>? danos)
+        {
+            Danos = danos;
         }
     }
 }

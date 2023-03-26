@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FichasAndDragons.API", "FichasAndDragons.API\FichasAndDragons.API.csproj", "{226D9507-574B-4FA2-8264-69115619750B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FichasAndDragons.API", "FichasAndDragons.API\FichasAndDragons.API.csproj", "{226D9507-574B-4FA2-8264-69115619750B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FichasAndDragons.Aplicacao", "FichasAndDragons.Aplicacao\FichasAndDragons.Aplicacao.csproj", "{365D189A-45B7-49C3-9160-EC07D173211B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FichasAndDragons.Aplicacao", "FichasAndDragons.Aplicacao\FichasAndDragons.Aplicacao.csproj", "{365D189A-45B7-49C3-9160-EC07D173211B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FichasAndDragons.DataTransfer", "FichasAndDragons.DataTransfer\FichasAndDragons.DataTransfer.csproj", "{68D613DE-D598-47E4-ADF8-D28609BCC8E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FichasAndDragons.DataTransfer", "FichasAndDragons.DataTransfer\FichasAndDragons.DataTransfer.csproj", "{68D613DE-D598-47E4-ADF8-D28609BCC8E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FichasAndDragons.Dominio", "FichasAndDragons.Dominio\FichasAndDragons.Dominio.csproj", "{51B1C5DB-02DE-4322-A8FE-D377418ADB70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FichasAndDragons.Dominio", "FichasAndDragons.Dominio\FichasAndDragons.Dominio.csproj", "{51B1C5DB-02DE-4322-A8FE-D377418ADB70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FichasAndDragons.Infra", "FichasAndDragons.Infra\FichasAndDragons.Infra.csproj", "{FE121A82-16BE-486F-8862-027465319315}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FichasAndDragons.Infra", "FichasAndDragons.Infra\FichasAndDragons.Infra.csproj", "{FE121A82-16BE-486F-8862-027465319315}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FichasAndDragons.Ioc", "FichasAndDragons.Ioc\FichasAndDragons.Ioc.csproj", "{72AC4771-F5D1-4506-BEF5-415A9A763555}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FichasAndDragons.Ioc", "FichasAndDragons.Ioc\FichasAndDragons.Ioc.csproj", "{72AC4771-F5D1-4506-BEF5-415A9A763555}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FichasAndDragons.Comum", "FichasAndDragons.Comum\FichasAndDragons.Comum.csproj", "{3694F480-6F63-49B5-A156-513451723ABB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{72AC4771-F5D1-4506-BEF5-415A9A763555}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72AC4771-F5D1-4506-BEF5-415A9A763555}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72AC4771-F5D1-4506-BEF5-415A9A763555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3694F480-6F63-49B5-A156-513451723ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3694F480-6F63-49B5-A156-513451723ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3694F480-6F63-49B5-A156-513451723ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3694F480-6F63-49B5-A156-513451723ABB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

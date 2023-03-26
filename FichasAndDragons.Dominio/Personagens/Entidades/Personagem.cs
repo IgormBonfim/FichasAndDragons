@@ -9,7 +9,7 @@ namespace FichasAndDragons.Dominio.Personagens.Entidades
         public string Jogador { get; protected set; }
         public Vida Vida { get; protected set; }
         public Classe Classe { get; protected set; }
-        public Informacoes Informacoes { get; protected set; }
+        public Informacao Informacoes { get; protected set; }
         public Personalidade Personalidade { get; protected set; }
         public Status Status { get; protected set; }
         public IEnumerable<Proficiencia>? Proficiencias { get; protected set; }
@@ -25,7 +25,7 @@ namespace FichasAndDragons.Dominio.Personagens.Entidades
             string jogador, 
             Vida vida, 
             Classe classe, 
-            Informacoes informacoes, 
+            Informacao informacoes, 
             Personalidade personalidade, 
             Status status, 
             IEnumerable<Proficiencia>? proficiencias, 
@@ -68,7 +68,7 @@ namespace FichasAndDragons.Dominio.Personagens.Entidades
             Classe = classe;
         }
 
-        public void SetInformacoes(Informacoes informacoes)
+        public void SetInformacoes(Informacao informacoes)
         {
             Informacoes = informacoes;
         }

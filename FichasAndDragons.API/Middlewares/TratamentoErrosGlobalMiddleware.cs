@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using FichasAndDragons.DataTransfer.Genericos.Responses;
-using FichasAndDragons.Dominio.Genericos.Exceptions;
+using FichasAndDragons.Comum.Exceptions;
 
 namespace FichasAndDragons.API.Middlewares
 {

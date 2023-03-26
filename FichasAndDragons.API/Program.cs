@@ -1,3 +1,4 @@
+using FichasAndDragons.API.Middlewares;
 using FichasAndDragons.Ioc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,7 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
+app.UseMiddleware(typeof(TratamentoErrosGlobalMiddleware));
 
 app.UseAuthorization();
 

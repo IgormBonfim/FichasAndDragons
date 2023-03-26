@@ -1,4 +1,4 @@
-﻿using FichasAndDragons.Dominio.Genericos.Exceptions;
+﻿using FichasAndDragons.Comum.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

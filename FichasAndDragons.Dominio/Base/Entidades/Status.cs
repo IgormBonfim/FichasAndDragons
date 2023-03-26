@@ -75,10 +75,10 @@ namespace FichasAndDragons.Dominio.Base.Entidades
 
         private void SetIniciativa()
         {
-            Iniciativa = VALOR_BASE + Destreza.Modificador;
+            Iniciativa = Destreza.Modificador;
 
             if (Destreza.Proficiente)
-                PercepcaoPassiva += BonusProficiencia;
+                Iniciativa += BonusProficiencia;
         }
     }
 }
