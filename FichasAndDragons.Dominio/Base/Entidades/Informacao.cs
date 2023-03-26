@@ -14,7 +14,7 @@ namespace FichasAndDragons.Dominio.Base.Entidades
         public string CorOlhos { get; protected set; }
         public string CorPele { get; protected set; }
         public string CorCabelo { get; protected set; }
-        public string Descricao { get; protected set; }
+        public string? Descricao { get; protected set; }
         public string Historia { get; protected set; }
         public string Antecedente { get; protected set; }
         public string Alinhamento { get; protected set; }
