@@ -27,13 +27,13 @@ jobs:
       run: echo $MONGO_USER
         
     - name: Trocar user mongo
-      run: sed -i 's#MONGOUSER#'"$MONGO_USER"' FichasAndDragons.API/appsettings.Production.json
+      run: sed -i 's/MONGOUSER/'"$MONGO_USER" FichasAndDragons.API/appsettings.Production.json
       
     - name: Trocar password mongo
-      run: sed -i 's#MONGOPASSWORD#'"$MONGO_PASSWORD" FichasAndDragons.API/appsettings.Production.json
+      run: sed -i 's/MONGOPASSWORD/'"$MONGO_PASSWORD" FichasAndDragons.API/appsettings.Production.json
       
     - name: Trocar host mongo
-      run: sed -i 's#MONGOHOST#'"MONGO_HOST" FichasAndDragons.API/appsettings.Production.json
+      run: sed -i 's/MONGOHOST/'"MONGO_HOST" FichasAndDragons.API/appsettings.Production.json
       
     - name: log appsettings
       run: echo "$(<FichasAndDragons.API/appsettings.Production.json)" 
