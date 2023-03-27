@@ -18,6 +18,21 @@ jobs:
       with:
         username: igorbonfim
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+        
+    - name: Pegar variaveis de ambiente
+      env:
+        MONGO_USER: ${{ secrets.MONGOUSER }}
+        MONGO_PASSWORD: ${{ secrets.MONGOPASSWORD }}
+        MONGO_HOST: ${{ secrets.MONGOHOST }}
+        
+    - name: Trocar user mongo
+      run: sed -i 's#{MONGOUSER}#'"$MONGO_USER"'#g' appsettings.Production.json
+      
+    - name: Trocar password mongo
+      run: sed -i 's#{MONGOPASSWORD}#'"$MONGO_PASSWORD"'#g' appsettings.Production.json
+      
+    - name: Trocar host mongo
+      run: sed -i 's#{MONGOHOST}#'"MONGO_HOST"'#g' appsettings.Production.json
     
     - name: Build Docker image
       run: docker build . --file Dockerfile -t igorbonfim/fichasanddragons:${GITHUB_REF##*/}
