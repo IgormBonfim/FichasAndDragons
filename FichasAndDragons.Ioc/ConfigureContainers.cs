@@ -23,6 +23,8 @@ namespace FichasAndDragons.Ioc
             string connectionString = configuration.GetSection("DatabaseConfig:ConnectionString").Value;
             string databaseName = configuration.GetSection("DatabaseConfig:DatabaseName").Value;
 
+            Console.WriteLine(connectionString);
+
             services.AddSingleton<IMongoDatabaseConfiguration>(x => MongoDatabaseFluent.Configure().ConfigureClient(connectionString).ConfigureDatabaseName(databaseName));
 
             services.Scan(scan => scan.FromAssemblyOf<PersonagensAppServico>().AddClasses().AsImplementedInterfaces().WithScopedLifetime());
