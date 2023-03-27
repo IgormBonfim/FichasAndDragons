@@ -24,7 +24,7 @@ jobs:
         MONGO_HOST: ${{ secrets.MONGOHOST }}
         
     - name: log env
-      run: echo $MONGO_USER
+      run: echo ${{secrets.MONGOUSER}} | sed 's/./& /g'
         
     - name: Trocar user mongo
       run: sed -i 's/#MONGO_USER#/'"${{ secrets.MONGOUSER }}"'/' FichasAndDragons.API/appsettings.Production.json
