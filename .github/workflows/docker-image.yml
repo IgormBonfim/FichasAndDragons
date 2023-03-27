@@ -24,13 +24,13 @@ jobs:
         MONGO_HOST: ${{ secrets.MONGOHOST }}
         
     - name: Trocar user mongo
-      run: sed -i 's#{MONGOUSER}#'"$MONGO_USER"'#g' FichasAndDragons.API/appsettings.Production.json
+      run: sed -i 's/MONGOUSER/'"$MONGO_USER"' FichasAndDragons.API/appsettings.Production.json
       
     - name: Trocar password mongo
-      run: sed -i 's#{MONGOPASSWORD}#'"$MONGO_PASSWORD"'#g' FichasAndDragons.API/appsettings.Production.json
+      run: sed -i 's/MONGOPASSWORD/'"$MONGO_PASSWORD" FichasAndDragons.API/appsettings.Production.json
       
     - name: Trocar host mongo
-      run: sed -i 's#{MONGOHOST}#'"MONGO_HOST"'#g' FichasAndDragons.API/appsettings.Production.json
+      run: sed -i 's/MONGOHOST/'"MONGO_HOST" FichasAndDragons.API/appsettings.Production.json
     
     - name: Build Docker image
       run: docker build . --file Dockerfile -t igorbonfim/fichasanddragons:${GITHUB_REF##*/}
