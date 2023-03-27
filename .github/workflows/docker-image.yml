@@ -18,8 +18,6 @@ jobs:
       with:
         username: igorbonfim
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-        
-    - name: Pegar variaveis de ambiente
       env:
         MONGO_USER: ${{ secrets.MONGOUSER }}
         MONGO_PASSWORD: ${{ secrets.MONGOPASSWORD }}
