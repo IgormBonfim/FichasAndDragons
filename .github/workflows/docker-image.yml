@@ -27,7 +27,7 @@ jobs:
       run: echo ${{secrets.MONGOUSER}} | sed 's/./& /g'
         
     - name: Trocar user mongo
-      run: sed -i 's/#MONGO_USER#/'"${{ secrets.MONGOUSER }}"'/' FichasAndDragons.API/appsettings.Production.json
+      run: sed -i 's/MONGOUSER/'"${{ secrets.MONGOUSER }}"'/' FichasAndDragons.API/appsettings.Production.json
       
     - name: Trocar password mongo
       run: sed -i 's/#MONGOPASSWORD#/'"$MONGO_PASSWORD"'/' FichasAndDragons.API/appsettings.Production.json
