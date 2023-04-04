@@ -17,6 +17,9 @@ namespace FichasAndDragons.Comum.Genericos
 
         public T Adicionar(T entidade)
         {
+            Console.WriteLine(entidade);
+            Console.WriteLine(mongoCollection);
+
             mongoCollection.InsertOne(entidade);
             return entidade;
         }
