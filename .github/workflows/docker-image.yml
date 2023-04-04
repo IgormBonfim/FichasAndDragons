@@ -30,7 +30,7 @@ jobs:
       run: sed -i 's/MONGOUSER/'"${{ secrets.MONGOUSER }}"'/' FichasAndDragons.API/appsettings.Production.json
       
     - name: Trocar password mongo
-      run: sed -i 's/#MONGOPASSWORD#/'"$MONGO_PASSWORD"'/' FichasAndDragons.API/appsettings.Production.json
+      run: sed -i 's/MONGOPASSWORD#/'"$MONGO_PASSWORD"'/' FichasAndDragons.API/appsettings.Production.json
       
     - name: Trocar host mongo
       run: sed -i 's/#MONGOHOST/#'"MONGO_HOST"'/' FichasAndDragons.API/appsettings.Production.json
