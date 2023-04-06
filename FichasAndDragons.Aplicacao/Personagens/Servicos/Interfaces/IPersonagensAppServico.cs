@@ -11,5 +11,6 @@ namespace FichasAndDragons.Aplicacao.Personagens.Servicos.Interfaces
     public interface IPersonagensAppServico
     {
         PersonagemResponse Adicionar(PersonagemInserirRequest request);
+        PersonagemResponse Recuperar(string id);
     }
 }

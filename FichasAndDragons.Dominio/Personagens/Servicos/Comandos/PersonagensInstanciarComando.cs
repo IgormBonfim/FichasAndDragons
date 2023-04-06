@@ -12,11 +12,11 @@ namespace FichasAndDragons.Dominio.Personagens.Servicos.Comandos
     {
         public string Nome { get; set; }
         public string Jogador { get; set; }
-        public VidaInstanciarComando Vida { get; set; }
-        public ClasseInstanciarComando Classe { get; set; }
-        public InformacaoInstanciarComando Informacoes { get; set; }
-        public PersonalidadeInstanciarComando Personalidade { get; set; }
-        public StatusInstanciarComando Status { get; set; }
+        public VidaInstanciarComando? Vida { get; set; }
+        public ClasseInstanciarComando? Classe { get; set; }
+        public InformacaoInstanciarComando? Informacoes { get; set; }
+        public PersonalidadeInstanciarComando? Personalidade { get; set; }
+        public StatusInstanciarComando? Status { get; set; }
         public IEnumerable<ProficienciaInstanciarComando> Proficiencias { get; set; } = new List<ProficienciaInstanciarComando>();
         public IEnumerable<CaracteristicaInstanciarComando> Caracteristicas { get; set; } = new List<CaracteristicaInstanciarComando>();
         public IEnumerable<ItemInstanciarComando> Equipamentos { get; set; } = new List<ItemInstanciarComando>();

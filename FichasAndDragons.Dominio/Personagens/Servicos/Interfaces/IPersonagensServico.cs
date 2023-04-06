@@ -12,5 +12,6 @@ namespace FichasAndDragons.Dominio.Personagens.Servicos.Interfaces
     {
         Personagem Instanciar(PersonagensInstanciarComando instanciarComando);
         Personagem Inserir(Personagem personagem);
+        Personagem Validar(string id);
     }
 }

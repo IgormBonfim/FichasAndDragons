@@ -1,9 +1,11 @@
-﻿using FichasAndDragons.Dominio.Base.Entidades;
+﻿using FichasAndDragons.Comum.Exceptions;
+using FichasAndDragons.Dominio.Base.Entidades;
 using FichasAndDragons.Dominio.Base.Servicos.Interfaces;
 using FichasAndDragons.Dominio.Personagens.Entidades;
 using FichasAndDragons.Dominio.Personagens.Repositorios;
 using FichasAndDragons.Dominio.Personagens.Servicos.Comandos;
 using FichasAndDragons.Dominio.Personagens.Servicos.Interfaces;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,11 +58,37 @@ namespace FichasAndDragons.Dominio.Personagens.Servicos
 
         public Personagem Instanciar(PersonagensInstanciarComando instanciarComando)
         {
-            Vida vida = vidasServico.Instanciar(instanciarComando.Vida);
-            Classe classe = classesServico.Instanciar(instanciarComando.Classe);
-            Informacao informacoes = informacoesServico.Instanciar(instanciarComando.Informacoes);
-            Personalidade personalidade = personalidadesServico.Instanciar(instanciarComando.Personalidade);
-            Status status = statusServico.Instanciar(instanciarComando.Status);
+            Vida vida = null;
+            Classe classe = null;
+            Informacao informacoes = null;
+            Personalidade personalidade = null;
+            Status status = null;
+
+            if (instanciarComando.Vida != null)
+            {
+                vida = vidasServico.Instanciar(instanciarComando.Vida);
+            }
+
+            if (instanciarComando.Classe != null)
+            {
+                classe = classesServico.Instanciar(instanciarComando.Classe);
+            }
+
+            if (instanciarComando.Informacoes != null)
+            {
+                informacoes = informacoesServico.Instanciar(instanciarComando.Informacoes);
+            }
+
+            if (instanciarComando.Personalidade != null)
+            {
+                personalidade = personalidadesServico.Instanciar(instanciarComando.Personalidade);
+            }
+
+            if (instanciarComando.Status != null)
+            {
+                status = statusServico.Instanciar(instanciarComando.Status);
+            }
+
             IList<Proficiencia> proficiencias = new List<Proficiencia>();  
             IList<Caracteristica> caracteristicas = new List<Caracteristica>();
             IList<Item> equipamentos = new List<Item>();
@@ -104,6 +132,18 @@ namespace FichasAndDragons.Dominio.Personagens.Servicos
                 magias,
                 instanciarComando.Inspirado
                 );
+        }
+
+        public Personagem Validar(string id)
+        {
+            ObjectId objectId = new ObjectId( id );
+
+            Personagem personagem = personagensRepositorio.Recuperar(objectId);
+
+            if (personagem == null)
+                throw new NotFoundException();
+
+            return personagem;
         }
     }
 }

@@ -33,5 +33,12 @@ namespace FichasAndDragons.Aplicacao.Personagens.Servicos
 
             return mapper.Map<PersonagemResponse>(personagem);
         }
+        public PersonagemResponse Recuperar(string id)
+        {
+            Personagem personagem = personagensServico.Validar(id);
+
+            return mapper.Map<PersonagemResponse>(personagem);
+        }
+
     }
 }

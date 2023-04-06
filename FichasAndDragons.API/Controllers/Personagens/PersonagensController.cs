@@ -23,5 +23,12 @@ namespace FichasAndDragons.API.Controllers.Personagens
             var response = personagensAppServico.Adicionar(request);
             return Created($"/{response.Id}", response);
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<PersonagemResponse> Recuperar(string id)
+        {
+            var response = personagensAppServico.Recuperar(id);
+            return Ok(response);
+        }
     }
 }
