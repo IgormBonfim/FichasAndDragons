@@ -17,6 +17,20 @@ namespace FichasAndDragons.API.Controllers.Personagens
             this.personagensAppServico = personagensAppServico;
         }
 
+        [HttpGet]
+        public ActionResult<IEnumerable<PersonagemResponse>> Listar([FromQuery] PersonagemListarRequest request)
+        {
+            var response = personagensAppServico.Listar(request);
+            return Ok(response);
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<PersonagemResponse> Recuperar(string id)
+        {
+            var response = personagensAppServico.Recuperar(id);
+            return Ok(response);
+        }
+
         [HttpPost]
         public ActionResult<PersonagemResponse> Adicionar([FromBody] PersonagemInserirRequest request)
         {
@@ -24,10 +38,17 @@ namespace FichasAndDragons.API.Controllers.Personagens
             return Created($"/{response.Id}", response);
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<PersonagemResponse> Recuperar(string id)
+        [HttpPut("{id}")]
+        public ActionResult<PersonagemResponse> Editar([FromRoute] string id, [FromBody] PersonagemInserirRequest request)
         {
-            var response = personagensAppServico.Recuperar(id);
+            var response = personagensAppServico.Editar(request, id);
+            return Ok(response);
+        }
+
+        [HttpPatch("{id}")]
+        public ActionResult<bool> MudarInspiracao([FromRoute] string id)
+        {
+            var response = personagensAppServico.MudarInspiracao(id);
             return Ok(response);
         }
     }

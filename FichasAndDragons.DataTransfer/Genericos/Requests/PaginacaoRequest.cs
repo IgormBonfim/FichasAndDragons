@@ -8,7 +8,15 @@ namespace FichasAndDragons.DataTransfer.Genericos.Requests
 {
     public class PaginacaoRequest
     {
-        public int Pagina { get; set; } = 1;
-        public int Quantidade { get; set; } = 20;
+        public int Pagina { get; set; }
+        public int Quantidade { get; set; } 
+        public string CampoOrdenacao { get; set; }
+        public string TipoOrdenacao { get; set;}
+
+        public PaginacaoRequest(string campoOrdenacao, string tipoOrdenacao)
+        {
+            CampoOrdenacao = campoOrdenacao;
+            TipoOrdenacao = tipoOrdenacao;
+        }
     }
 }

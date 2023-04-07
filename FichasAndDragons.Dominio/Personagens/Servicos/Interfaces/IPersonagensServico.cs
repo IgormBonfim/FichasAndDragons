@@ -10,8 +10,10 @@ namespace FichasAndDragons.Dominio.Personagens.Servicos.Interfaces
 {
     public interface IPersonagensServico
     {
+        Personagem Validar(string id);
         Personagem Instanciar(PersonagensInstanciarComando instanciarComando);
         Personagem Inserir(Personagem personagem);
-        Personagem Validar(string id);
+        Personagem Editar(Personagem personagemEditar, string id);
+        bool MudarInspiracao(string id);
     }
 }

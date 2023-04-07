@@ -3,6 +3,7 @@ using FichasAndDragons.Comum.Genericos.Interfaces;
 using FichasAndDragons.Comum.Configs.Interfaces;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System.Linq.Expressions;
 
 namespace FichasAndDragons.Comum.Genericos
 {
@@ -34,7 +35,7 @@ namespace FichasAndDragons.Comum.Genericos
 
         public IEnumerable<T> Listar()
         {
-            return mongoCollection.Find(entidade => true).ToList();
+            return mongoCollection.Find(entidade => true).ToEnumerable();
         }
 
         public Paginacao<T> Listar(IQueryable<T> query, int pagina, int quantidade)
@@ -43,6 +44,11 @@ namespace FichasAndDragons.Comum.Genericos
             query = Paginar(query, pagina, quantidade);
 
             return ListarPaginado(query, pagina, quantidade, total);
+        }
+
+        public IEnumerable<T> Listar(Expression<Func<T, bool>> filtro)
+        {
+            return mongoCollection.AsQueryable().Where(filtro).AsEnumerable();
         }
 
         private Paginacao<T> ListarPaginado(IQueryable<T> query, int pagina, int quantidade, int total)

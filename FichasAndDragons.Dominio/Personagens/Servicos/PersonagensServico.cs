@@ -51,6 +51,27 @@ namespace FichasAndDragons.Dominio.Personagens.Servicos
             this.magiasServico = magiasServico;
         }
 
+        public Personagem Editar(Personagem personagemEditar, string id)
+        {
+            Personagem personagem = Validar(id);
+
+            personagem.SetNome(personagemEditar.Nome);
+            personagem.SetJogador(personagemEditar.Jogador);
+            personagem.SetVida(personagemEditar.Vida);
+            personagem.SetClasse(personagemEditar.Classe);
+            personagem.SetInformacoes(personagemEditar.Informacoes);
+            personagem.SetPersonalidade(personagemEditar.Personalidade);
+            personagem.SetStatus(personagemEditar.Status);
+            personagem.SetProficiencias(personagemEditar.Proficiencias);
+            personagem.SetCaracteristicas(personagemEditar.Caracteristicas);
+            personagem.SetEquipamentos(personagemEditar.Equipamentos);
+            personagem.SetMagias(personagemEditar.Magias);
+            personagem.SetInspirado(personagemEditar.Inspirado);
+            personagem.SetDataEdicao();
+
+            return personagensRepositorio.Atualizar(personagem.Id, personagem);
+        }
+
         public Personagem Inserir(Personagem personagem)
         {
             return personagensRepositorio.Adicionar(personagem);
@@ -134,9 +155,20 @@ namespace FichasAndDragons.Dominio.Personagens.Servicos
                 );
         }
 
+        public bool MudarInspiracao(string id)
+        {
+            Personagem personagem = Validar(id);
+            personagem.SetInspirado(!personagem.Inspirado);
+            personagem.SetDataEdicao();
+
+            personagensRepositorio.Atualizar(personagem.Id, personagem);
+
+            return personagem.Inspirado;
+        }
+
         public Personagem Validar(string id)
         {
-            ObjectId objectId = new ObjectId( id );
+            ObjectId objectId = new ObjectId(id);
 
             Personagem personagem = personagensRepositorio.Recuperar(objectId);
 
