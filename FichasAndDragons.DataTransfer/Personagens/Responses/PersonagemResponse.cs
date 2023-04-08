@@ -22,5 +22,7 @@ namespace FichasAndDragons.DataTransfer.Personagens.Responses
         public IEnumerable<ItemResponse>? Equipamentos { get; set; }
         public IEnumerable<MagiaResponse>? Magias { get; set; }
         public bool Inspirado { get; set; }
+        public DateTime DataCriacao { get; set; }
+        public DateTime? DataEdicao { get;}
     }
 }

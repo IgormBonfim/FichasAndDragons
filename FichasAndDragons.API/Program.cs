@@ -21,6 +21,13 @@ app.UseSwaggerUI();
 
 app.UseMiddleware(typeof(TratamentoErrosGlobalMiddleware));
 
+app.UseCors(c =>
+{
+    c.AllowAnyHeader();
+    c.AllowAnyMethod();
+    c.AllowAnyOrigin();
+});
+
 app.UseAuthorization();
 
 app.MapControllers();
